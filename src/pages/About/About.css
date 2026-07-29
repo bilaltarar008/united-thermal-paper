@@ -1,0 +1,798 @@
+/* =========================================================
+   ABOUT — United Thermal Paper
+   Mobile-first. Breakpoints go upward: 640 / 900 / 1200.
+   Every selector is scoped under .about so nothing here can
+   collide with Hero.css or the navbar.
+========================================================= */
+
+.about {
+  /* ---- ink ---- */
+  --navy-900: #061b34;
+  --navy-800: #08284d;
+  --navy-600: #0d3f74;
+  --ink: #0b2544;
+  --ink-soft: #4c6b8c;
+  --ink-faint: #7d97b4;
+
+  /* ---- surfaces ---- */
+  --paper: #ffffff;
+  --paper-tint: #f3f7fc;
+  --line: #dce6f1;
+  --line-strong: #c3d4e6;
+
+  /* ---- accent ---- */
+  --green: #1aa851;
+  --green-bright: #22c55e;
+  --green-pale: #eafaf0;
+
+  --display: "Manrope", "Poppins", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  color: var(--ink);
+  font-family: var(--display);
+  background: var(--paper);
+}
+
+.about-wrap {
+  width: min(90%, 1240px);
+  margin-inline: auto;
+}
+
+/* =========================================================
+   SHARED TYPE
+========================================================= */
+
+.about h1 {
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  margin: 18px 0 18px;
+  text-wrap: balance;
+}
+
+.about h2 {
+  font-size: clamp(1.55rem, 4.6vw, 2.4rem);
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  margin: 10px 0 0;
+  text-wrap: balance;
+}
+
+.about h3 {
+  font-size: 1.05rem;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.about p {
+  line-height: 1.72;
+  color: var(--ink-soft);
+  margin: 0 0 16px;
+}
+
+.about p:last-child {
+  margin-bottom: 0;
+}
+
+/* kicker — monospace utility label, same voice as the hero */
+
+.about-kicker {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+.about-section-note {
+  max-width: 60ch;
+  margin-top: 14px;
+  font-size: 0.95rem;
+}
+
+/* =========================================================
+   PAGE HEADER — dark band
+========================================================= */
+
+.about-head {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 44px 0 40px;
+  color: #eef4fb;
+
+  background:
+    radial-gradient(700px 420px at 88% 8%, rgba(32, 124, 229, 0.30), transparent 62%),
+    linear-gradient(140deg, var(--navy-900) 0%, var(--navy-800) 48%, var(--navy-600) 100%);
+}
+
+/* engineering grid, masked to the top-right */
+.about-head::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(110% 90% at 85% 12%, #000 10%, transparent 70%);
+  mask-image: radial-gradient(110% 90% at 85% 12%, #000 10%, transparent 70%);
+}
+
+/* perforated tape edge — the motif that ties the site together */
+.about-head::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 1px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.34) 0 10px,
+    transparent 10px 20px
+  );
+}
+
+.about-head h1 {
+  color: #fff;
+}
+
+.about-accent {
+  background: linear-gradient(100deg, #7ee2a8, var(--green-bright) 55%, #4cc9f0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.about-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 15px 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(14px);
+
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #dce9f8;
+}
+
+.about-eyebrow i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green-bright);
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.22);
+}
+
+.about-lede {
+  max-width: 56ch;
+  font-size: 1rem;
+  color: #a8c1de;
+}
+
+/* ---- Tenacious Global Group lockup ---- */
+
+.about-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 28px;
+  padding: 12px 18px 12px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+/* swap this for the real logo <img> */
+.about-group-mark {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--navy-800);
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.about-group img {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+}
+
+.about-group-text {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.35;
+}
+
+.about-group-text b {
+  display: block;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7fd6a1;
+  margin-bottom: 3px;
+}
+
+/* ---- fact strip ---- */
+
+.about-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin: 34px 0 0;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.about-facts > div {
+  padding: 20px 18px;
+  background: rgba(8, 30, 58, 0.55);
+  backdrop-filter: blur(10px);
+}
+
+.about-facts dt {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.about-facts dd {
+  margin: 5px 0 0;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8fabcc;
+}
+
+/* =========================================================
+   SECTION SHELL
+========================================================= */
+
+.about-section {
+  padding: 52px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.about-tint {
+  background: var(--paper-tint);
+}
+
+.about-split-head {
+  margin-bottom: 30px;
+}
+
+.about-center {
+  text-align: center;
+}
+
+.about-center .about-section-note {
+  margin-inline: auto;
+}
+
+/* =========================================================
+   STORY — vertical receipt tape
+========================================================= */
+
+.about-tape {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px dashed var(--line-strong);
+}
+
+.about-tape li {
+  position: relative;
+  padding: 22px 0 22px 0;
+  border-bottom: 1px dashed var(--line-strong);
+}
+
+.about-tape-year {
+  display: block;
+  margin-bottom: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+.about-tape-body p {
+  max-width: 62ch;
+  font-size: 0.95rem;
+}
+
+/* =========================================================
+   MISSION & VISION
+========================================================= */
+
+.about-mv {
+  display: grid;
+  gap: 16px;
+}
+
+.about-mv article {
+  padding: 26px 22px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--paper);
+}
+
+.about-mv-tag {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 5px 11px;
+  border-radius: 6px;
+  background: var(--green-pale);
+  color: var(--green);
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.about-mv p {
+  font-size: 1.02rem;
+  color: var(--ink);
+  line-height: 1.68;
+}
+
+/* =========================================================
+   DIFFERENCE CARDS
+========================================================= */
+
+.about-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.about-card {
+  padding: 24px 20px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  transition: border-color 0.25s ease, transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.about-card p {
+  font-size: 0.93rem;
+  margin: 0;
+}
+
+@media (hover: hover) {
+  .about-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--line-strong);
+    box-shadow: 0 14px 30px rgba(11, 37, 68, 0.08);
+  }
+}
+
+/* =========================================================
+   QUALITY SHEET
+========================================================= */
+
+.about-sheet {
+  border-top: 1px solid var(--line-strong);
+}
+
+/* header row is meaningless when the rows are stacked */
+.about-sheet-head {
+  display: none;
+}
+
+.about-sheet-row {
+  display: grid;
+  gap: 4px;
+  padding: 18px 0;
+  border-bottom: 1px dashed var(--line-strong);
+}
+
+.about-sheet-prop {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.about-sheet-val {
+  font-family: var(--mono);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.about-sheet-why {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+/* =========================================================
+   PROCESS STEPS
+========================================================= */
+
+.about-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+  counter-reset: step;
+}
+
+.about-steps li {
+  position: relative;
+  padding: 24px 20px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.about-step-no {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--green);
+}
+
+.about-steps p {
+  font-size: 0.93rem;
+  margin: 0;
+}
+
+/* =========================================================
+   TRUST LIST
+========================================================= */
+
+.about-trust {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.about-trust li {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 17px 0;
+  border-bottom: 1px dashed var(--line-strong);
+  font-size: 0.97rem;
+  line-height: 1.62;
+  color: var(--ink);
+}
+
+.about-trust li:first-child {
+  border-top: 1px dashed var(--line-strong);
+}
+
+.about-trust svg {
+  flex: none;
+  margin-top: 3px;
+  font-size: 1.05rem;
+  color: var(--green);
+}
+
+/* =========================================================
+   CTA — dark band
+========================================================= */
+
+.about-cta {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 52px 0;
+  color: #eef4fb;
+
+  background:
+    radial-gradient(600px 380px at 12% 10%, rgba(34, 197, 94, 0.16), transparent 62%),
+    linear-gradient(140deg, var(--navy-800) 0%, var(--navy-600) 100%);
+}
+
+.about-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.34) 0 10px,
+    transparent 10px 20px
+  );
+}
+
+.about-cta h2 {
+  color: #fff;
+}
+
+.about-cta p {
+  max-width: 52ch;
+  margin-top: 12px;
+  color: #a8c1de;
+}
+
+.about-cta-actions {
+  display: grid;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.about-btn-solid,
+.about-btn-wa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 26px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.about-btn-solid {
+  background: linear-gradient(180deg, #2fd06d, #1aa851);
+  color: #04240f;
+  box-shadow: 0 12px 28px rgba(34, 197, 94, 0.3);
+}
+
+.about-btn-solid svg {
+  transition: transform 0.25s ease;
+}
+
+.about-btn-wa {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+@media (hover: hover) {
+  .about-btn-solid:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 36px rgba(34, 197, 94, 0.4);
+  }
+
+  .about-btn-solid:hover svg {
+    transform: translateX(4px);
+  }
+
+  .about-btn-wa:hover {
+    background: #fff;
+    color: var(--navy-800);
+    border-color: #fff;
+    transform: translateY(-3px);
+  }
+}
+
+.about-btn-solid:focus-visible,
+.about-btn-wa:focus-visible {
+  outline: 2px solid #7ee2a8;
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   ≥ 640px — small tablet
+========================================================= */
+
+@media (min-width: 640px) {
+
+  .about-section {
+    padding: 66px 0;
+  }
+
+  .about-head {
+    padding: 60px 0 56px;
+  }
+
+  .about-lede {
+    font-size: 1.07rem;
+  }
+
+  .about-facts {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .about-mv {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .about-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .about-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .about-cta-actions {
+    grid-auto-flow: column;
+    justify-content: start;
+  }
+
+  /* tape gets a hanging year column */
+  .about-tape li {
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 20px;
+    padding: 26px 0;
+  }
+
+  .about-tape-year {
+    margin: 0;
+    padding-top: 3px;
+  }
+}
+
+/* =========================================================
+   ≥ 900px — laptop
+========================================================= */
+
+@media (min-width: 900px) {
+
+  .about-section {
+    padding: 84px 0;
+  }
+
+  .about-head {
+    padding: 76px 0 70px;
+  }
+
+  .about-head-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    align-items: center;
+    gap: 60px;
+  }
+
+  .about-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 0;
+  }
+
+  /* two-column section: heading left, prose right */
+  .about-split {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 60px;
+    align-items: start;
+  }
+
+  .about-split .about-split-head {
+    margin-bottom: 0;
+    position: sticky;
+    top: 120px;
+  }
+
+  .about-split-body p {
+    font-size: 1.03rem;
+    max-width: 64ch;
+  }
+
+  .about-grid,
+  .about-steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  /* spec sheet becomes a real table */
+  .about-sheet-head,
+  .about-sheet-row {
+    display: grid;
+    grid-template-columns: 200px 240px minmax(0, 1fr);
+    gap: 24px;
+    align-items: baseline;
+  }
+
+  .about-sheet-head {
+    padding: 0 0 14px;
+    border-bottom: 1px solid var(--line-strong);
+  }
+
+  .about-sheet-head span {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .about-sheet-row {
+    padding: 20px 0;
+  }
+
+  .about-sheet-prop {
+    font-family: var(--display);
+    font-size: 0.98rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--ink);
+  }
+
+  .about-cta-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .about-cta-actions {
+    margin-top: 0;
+  }
+}
+
+/* =========================================================
+   ≥ 1200px — desktop
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  .about-section {
+    padding: 96px 0;
+  }
+
+  .about-facts > div {
+    padding: 24px 22px;
+  }
+
+  .about-facts dt {
+    font-size: 1.6rem;
+  }
+
+  .about-card,
+  .about-steps li {
+    padding: 30px 26px;
+  }
+}
+
+/* =========================================================
+   MOTION PREFERENCES
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .about * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

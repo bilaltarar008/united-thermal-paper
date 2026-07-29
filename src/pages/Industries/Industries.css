@@ -1,0 +1,666 @@
+/* =========================================================
+   INDUSTRIES — United Thermal Paper
+   Mobile-first; breakpoints climb 640 / 900 / 1200.
+   Scoped under .ind throughout.
+========================================================= */
+
+.ind {
+  --navy-900: #061b34;
+  --navy-800: #08284d;
+  --navy-600: #0d3f74;
+  --ink: #0b2544;
+  --ink-soft: #4c6b8c;
+  --ink-faint: #7d97b4;
+
+  --paper: #ffffff;
+  --paper-tint: #f3f7fc;
+  --line: #dce6f1;
+  --line-strong: #c3d4e6;
+
+  --green: #1aa851;
+  --green-bright: #22c55e;
+  --green-pale: #eafaf0;
+
+  --display: "Manrope", "Poppins", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  color: var(--ink);
+  font-family: var(--display);
+  background: var(--paper);
+}
+
+.ind-wrap {
+  width: min(90%, 1240px);
+  margin-inline: auto;
+}
+
+/* =========================================================
+   TYPE
+========================================================= */
+
+.ind h1 {
+  font-size: clamp(1.95rem, 6.4vw, 3.3rem);
+  line-height: 1.07;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  margin: 18px 0;
+  text-wrap: balance;
+}
+
+.ind h2 {
+  font-size: clamp(1.5rem, 4.4vw, 2.3rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  margin: 10px 0 0;
+  text-wrap: balance;
+}
+
+.ind h3 {
+  font-size: 1.08rem;
+  line-height: 1.28;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 8px;
+}
+
+.ind p {
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin: 0 0 16px;
+}
+
+.ind p:last-child {
+  margin-bottom: 0;
+}
+
+.ind-kicker {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+.ind-note {
+  max-width: 64ch;
+  margin-top: 14px;
+  font-size: 0.95rem;
+}
+
+/* =========================================================
+   HEADER — dark band
+========================================================= */
+
+.ind-head {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 44px 0 42px;
+  color: #eef4fb;
+
+  background:
+    radial-gradient(700px 420px at 88% 8%, rgba(32, 124, 229, 0.30), transparent 62%),
+    linear-gradient(140deg, var(--navy-900) 0%, var(--navy-800) 48%, var(--navy-600) 100%);
+}
+
+.ind-head::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(110% 90% at 85% 12%, #000 10%, transparent 70%);
+  mask-image: radial-gradient(110% 90% at 85% 12%, #000 10%, transparent 70%);
+}
+
+/* perforated tape edge — site-wide motif */
+.ind-head::after,
+.ind-cta::before {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 1px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.34) 0 10px,
+    transparent 10px 20px
+  );
+}
+
+.ind-head h1 {
+  color: #fff;
+}
+
+.ind-accent {
+  background: linear-gradient(100deg, #7ee2a8, var(--green-bright) 55%, #4cc9f0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.ind-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 15px 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(14px);
+
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #dce9f8;
+}
+
+.ind-eyebrow i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green-bright);
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.22);
+}
+
+.ind-lede {
+  max-width: 60ch;
+  font-size: 1rem;
+  color: #a8c1de;
+}
+
+.ind-head-actions {
+  display: grid;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.ind-btn-solid,
+.ind-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 26px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.ind-btn-solid {
+  background: linear-gradient(180deg, #2fd06d, #1aa851);
+  color: #04240f;
+  box-shadow: 0 12px 28px rgba(34, 197, 94, 0.3);
+}
+
+.ind-btn-solid svg {
+  transition: transform 0.25s ease;
+}
+
+.ind-btn-ghost {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+@media (hover: hover) {
+  .ind-btn-solid:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 36px rgba(34, 197, 94, 0.4);
+  }
+
+  .ind-btn-solid:hover svg {
+    transform: translateX(4px);
+  }
+
+  .ind-btn-ghost:hover {
+    background: #fff;
+    color: var(--navy-800);
+    border-color: #fff;
+    transform: translateY(-3px);
+  }
+}
+
+.ind a:focus-visible,
+.ind button:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.ind-head a:focus-visible,
+.ind-cta a:focus-visible {
+  outline-color: #7ee2a8;
+}
+
+/* =========================================================
+   SECTION SHELL
+========================================================= */
+
+.ind-section {
+  padding: 52px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.ind-tint {
+  background: var(--paper-tint);
+}
+
+.ind-section-head {
+  margin-bottom: 28px;
+}
+
+/* =========================================================
+   SECTOR CARDS
+========================================================= */
+
+.ind-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.ind-card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+
+  /* clears the navbar when jumped to from the table */
+  scroll-margin-top: 100px;
+
+  transition: transform 0.28s ease, box-shadow 0.28s ease,
+    border-color 0.28s ease;
+}
+
+.ind-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.ind-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  background: var(--green-pale);
+  color: var(--green);
+  font-size: 1.05rem;
+}
+
+.ind-card-typical {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  text-align: right;
+}
+
+.ind-card > p {
+  font-size: 0.93rem;
+  margin-bottom: 18px;
+}
+
+/* ---- printed / priority pairs ---- */
+
+.ind-meta {
+  margin: 0 0 18px;
+  border-top: 1px dashed var(--line-strong);
+}
+
+.ind-meta > div {
+  padding: 13px 0;
+  border-bottom: 1px dashed var(--line-strong);
+}
+
+.ind-meta dt {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 5px;
+}
+
+.ind-meta dd {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+/* ---- recommended rolls ---- */
+
+.ind-card-foot {
+  margin-top: auto;
+}
+
+.ind-foot-label {
+  display: block;
+  margin-bottom: 10px;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.ind-rolls {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+}
+
+.ind-rolls a {
+  display: inline-block;
+  padding: 6px 11px;
+  border-radius: 6px;
+  background: var(--green-pale);
+  color: var(--green);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  transition: background 0.22s ease, color 0.22s ease;
+}
+
+@media (hover: hover) {
+  .ind-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--line-strong);
+    box-shadow: 0 18px 38px rgba(11, 37, 68, 0.1);
+  }
+
+  .ind-rolls a:hover {
+    background: var(--green);
+    color: #fff;
+  }
+}
+
+/* =========================================================
+   CROSS-SECTOR REQUIREMENTS
+========================================================= */
+
+.ind-reqs {
+  display: grid;
+  gap: 16px;
+}
+
+.ind-reqs article {
+  padding: 24px 20px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.ind-reqs p {
+  font-size: 0.93rem;
+  margin: 0;
+}
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.ind-table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--paper);
+}
+
+.ind-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.ind-table thead th {
+  padding: 13px 16px;
+  text-align: left;
+  background: var(--paper-tint);
+  border-bottom: 1px solid var(--line-strong);
+
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+
+.ind-table tbody th,
+.ind-table tbody td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px dashed var(--line-strong);
+  vertical-align: top;
+}
+
+.ind-table tbody tr:last-child th,
+.ind-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.ind-table tbody th {
+  font-weight: 700;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.ind-table tbody th a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.ind-table tbody td {
+  font-family: var(--mono);
+  font-size: 0.84rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+/* =========================================================
+   ONBOARDING STEPS
+========================================================= */
+
+.ind-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.ind-steps li {
+  padding: 24px 20px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.ind-step-no {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--green);
+}
+
+.ind-steps p {
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+/* =========================================================
+   CTA BAND
+========================================================= */
+
+.ind-cta {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 52px 0;
+  color: #eef4fb;
+
+  background:
+    radial-gradient(600px 380px at 12% 10%, rgba(34, 197, 94, 0.16), transparent 62%),
+    linear-gradient(140deg, var(--navy-800) 0%, var(--navy-600) 100%);
+}
+
+.ind-cta::before {
+  inset: 0 0 auto 0;
+}
+
+.ind-cta h2 {
+  color: #fff;
+}
+
+.ind-cta p {
+  max-width: 54ch;
+  margin-top: 12px;
+  color: #a8c1de;
+}
+
+.ind-cta-actions {
+  display: grid;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+/* =========================================================
+   ≥ 640px
+========================================================= */
+
+@media (min-width: 640px) {
+
+  .ind-section {
+    padding: 66px 0;
+  }
+
+  .ind-head {
+    padding: 60px 0 58px;
+  }
+
+  .ind-lede {
+    font-size: 1.07rem;
+  }
+
+  .ind-head-actions,
+  .ind-cta-actions {
+    grid-auto-flow: column;
+    justify-content: start;
+  }
+
+  .ind-grid,
+  .ind-reqs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ind-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   ≥ 900px
+========================================================= */
+
+@media (min-width: 900px) {
+
+  .ind-section {
+    padding: 84px 0;
+  }
+
+  .ind-head {
+    padding: 74px 0 70px;
+  }
+
+  .ind-section-head {
+    margin-bottom: 36px;
+  }
+
+  .ind-steps {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .ind-cta-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .ind-cta-actions {
+    margin-top: 0;
+  }
+}
+
+/* =========================================================
+   ≥ 1200px
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  .ind-section {
+    padding: 96px 0;
+  }
+
+  .ind-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .ind-card {
+    padding: 28px 24px;
+  }
+
+  .ind-reqs article,
+  .ind-steps li {
+    padding: 30px 26px;
+  }
+}
+
+/* =========================================================
+   MOTION PREFERENCES
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .ind * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

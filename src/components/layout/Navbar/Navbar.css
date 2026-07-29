@@ -1,0 +1,827 @@
+/* =======================================
+   GOOGLE FONT
+======================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap");
+
+/* =======================================
+   GLOBAL
+======================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Manrope",sans-serif;
+}
+
+.container{
+    width:min(1320px,92%);
+    margin:auto;
+}
+
+/* =======================================
+   TOP BAR
+======================================= */
+
+.topbar{
+
+    height:42px;
+
+    background:#0F172A;
+
+    color:#fff;
+
+    overflow:hidden;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.marquee{
+
+    width:100%;
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
+}
+
+.marquee-content{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:70px;
+
+    animation:marquee 28s linear infinite;
+
+}
+
+.marquee-content span{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:14px;
+
+    font-weight:500;
+
+}
+
+.marquee-content svg{
+
+    color:#25D366;
+
+}
+
+@keyframes marquee{
+
+0%{
+
+transform:translateX(100%);
+
+}
+
+100%{
+
+transform:translateX(-100%);
+
+}
+
+}
+
+/* =======================================
+   NAVBAR
+======================================= */
+
+.navbar{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+
+    width:100%;
+
+    transition:.35s ease;
+
+    background:rgba(255,255,255,.92);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(0,0,0,.05);
+
+}
+
+.navbar.sticky{
+
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+
+}
+
+.navbar-container{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    min-height:86px;
+
+}
+
+/* =======================================
+   LOGO
+======================================= */
+
+.logo{
+
+    text-decoration:none;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.logo-text{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.logo h2{
+
+    color:#0057B8;
+
+    font-size:28px;
+
+    font-weight:800;
+
+    line-height:1;
+
+}
+
+.logo span{
+
+    color:#64748B;
+
+    margin-top:6px;
+
+    font-size:12px;
+
+    font-weight:500;
+
+}
+
+/* =======================================
+   NAVIGATION
+======================================= */
+
+.desktop-nav{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:35px;
+
+}
+
+.nav-link{
+
+    position:relative;
+
+    text-decoration:none;
+
+    color:#1E293B;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+    padding:10px 0;
+
+}
+
+.nav-link:hover{
+
+    color:#0057B8;
+
+}
+
+.nav-link::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:0;
+
+    left:0;
+
+    width:0;
+
+    height:3px;
+
+    border-radius:10px;
+
+    background:#0057B8;
+
+    transition:.35s;
+
+}
+
+.nav-link:hover::after{
+
+    width:100%;
+
+}
+
+.nav-link.active{
+
+    color:#0057B8;
+
+}
+
+.nav-link.active::after{
+
+    width:100%;
+
+}
+
+/* =======================================
+   RIGHT SIDE
+======================================= */
+
+.nav-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+}
+
+/* =======================================
+   WHATSAPP
+======================================= */
+
+.whatsapp-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:13px 22px;
+
+    background:#25D366;
+
+    color:#fff;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    transition:.35s;
+
+    box-shadow:0 10px 25px rgba(37,211,102,.25);
+
+}
+
+.whatsapp-btn svg{
+
+    font-size:20px;
+
+}
+
+.whatsapp-btn:hover{
+
+    transform:translateY(-4px);
+
+    background:#1DA851;
+
+    box-shadow:0 18px 40px rgba(37,211,102,.35);
+
+}
+
+/* =======================================
+   REQUEST QUOTE
+======================================= */
+
+.quote-btn{
+
+    padding:13px 28px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    color:#fff;
+
+    background:linear-gradient(135deg,#0057B8,#0B63CE);
+
+    transition:.35s;
+
+    box-shadow:0 12px 30px rgba(0,87,184,.25);
+
+}
+
+.quote-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 20px 40px rgba(0,87,184,.35);
+
+}
+
+/* =======================================
+   HAMBURGER
+======================================= */
+
+.hamburger{
+
+    display:none;
+
+    background:none;
+
+    border:none;
+
+    cursor:pointer;
+
+    font-size:28px;
+
+    color:#0057B8;
+
+    transition:.3s;
+
+}
+
+.hamburger:hover{
+
+    transform:rotate(90deg);
+
+}
+
+/* ===========================================
+   MOBILE OVERLAY
+=========================================== */
+
+.mobile-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    backdrop-filter:blur(5px);
+
+    z-index:999;
+
+}
+
+/* ===========================================
+   MOBILE DRAWER
+=========================================== */
+
+.mobile-menu{
+
+    position:fixed;
+
+    top:0;
+
+    right:0;
+
+    width:320px;
+
+    max-width:100%;
+
+    height:100vh;
+
+    background:#ffffff;
+
+    z-index:1000;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    padding:30px;
+
+    box-shadow:-10px 0 35px rgba(0,0,0,.12);
+
+}
+
+.mobile-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:40px;
+
+}
+
+.mobile-header h2{
+
+    font-size:24px;
+
+    color:#0F172A;
+
+    font-weight:800;
+
+}
+
+.close-btn{
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    background:#F1F5F9;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:22px;
+
+    transition:.3s;
+
+}
+
+.close-btn:hover{
+
+    background:#0057B8;
+
+    color:#fff;
+
+    transform:rotate(180deg);
+
+}
+
+/* ===========================================
+   MOBILE LINKS
+=========================================== */
+
+.mobile-links{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+.mobile-link{
+
+    text-decoration:none;
+
+    color:#1E293B;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    padding:15px 18px;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+}
+
+.mobile-link:hover{
+
+    background:#EEF6FF;
+
+    color:#0057B8;
+
+    padding-left:28px;
+
+}
+
+.mobile-link.active{
+
+    background:#0057B8;
+
+    color:#ffffff;
+
+}
+
+/* ===========================================
+   MOBILE BUTTONS
+=========================================== */
+
+.mobile-buttons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    margin-top:40px;
+
+}
+
+.mobile-whatsapp{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    text-decoration:none;
+
+    background:#25D366;
+
+    color:#fff;
+
+    padding:16px;
+
+    border-radius:10px;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+.mobile-whatsapp:hover{
+
+    background:#1DA851;
+
+    transform:translateY(-3px);
+
+}
+
+.mobile-quote{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    background:linear-gradient(135deg,#0057B8,#0B63CE);
+
+    color:#fff;
+
+    padding:16px;
+
+    border-radius:10px;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+.mobile-quote:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ===========================================
+   RESPONSIVE
+=========================================== */
+
+@media(max-width:1200px){
+
+.desktop-nav{
+
+gap:22px;
+
+}
+
+.logo h2{
+
+font-size:24px;
+
+}
+
+.quote-btn{
+
+padding:12px 20px;
+
+}
+
+.whatsapp-btn{
+
+padding:12px 18px;
+
+}
+
+}
+
+@media(max-width:992px){
+
+.desktop-nav{
+
+display:none;
+
+}
+
+.nav-actions{
+
+display:none;
+
+}
+
+.hamburger{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+.logo h2{
+
+font-size:22px;
+
+}
+
+.logo span{
+
+font-size:11px;
+
+}
+
+.navbar-container{
+
+min-height:78px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.topbar{
+
+height:38px;
+
+}
+
+.marquee-content{
+
+gap:45px;
+
+animation:marquee 18s linear infinite;
+
+}
+
+.marquee-content span{
+
+font-size:12px;
+
+}
+
+.logo h2{
+
+font-size:20px;
+
+}
+
+.logo span{
+
+display:none;
+
+}
+
+.mobile-menu{
+
+width:100%;
+
+padding:25px;
+
+}
+
+.mobile-header{
+
+margin-bottom:25px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.container{
+
+width:94%;
+
+}
+
+.navbar-container{
+
+min-height:72px;
+
+}
+
+.logo h2{
+
+font-size:18px;
+
+}
+
+.hamburger{
+
+font-size:24px;
+
+}
+
+.mobile-link{
+
+font-size:17px;
+
+padding:14px 15px;
+
+}
+
+.mobile-whatsapp,
+
+.mobile-quote{
+
+padding:15px;
+
+font-size:16px;
+
+}
+
+}
+
+/* ===========================================
+   SMOOTH ANIMATIONS
+=========================================== */
+
+.nav-link,
+.quote-btn,
+.whatsapp-btn,
+.mobile-link,
+.mobile-whatsapp,
+.mobile-quote,
+.close-btn,
+.hamburger{
+
+transition:all .3s ease;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}

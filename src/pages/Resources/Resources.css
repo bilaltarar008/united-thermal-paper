@@ -1,0 +1,853 @@
+/* =========================================================
+   RESOURCES — United Thermal Paper
+   Shared by Resources.jsx (.res) and ArticleDetail.jsx (.art)
+   Mobile-first; breakpoints climb 640 / 900 / 1200.
+========================================================= */
+
+.res {
+  --navy-900: #061b34;
+  --navy-800: #08284d;
+  --navy-600: #0d3f74;
+  --ink: #0b2544;
+  --ink-soft: #4c6b8c;
+  --ink-faint: #7d97b4;
+
+  --paper: #ffffff;
+  --paper-tint: #f3f7fc;
+  --line: #dce6f1;
+  --line-strong: #c3d4e6;
+
+  --green: #1aa851;
+  --green-bright: #22c55e;
+  --green-pale: #eafaf0;
+
+  --display: "Manrope", "Poppins", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  color: var(--ink);
+  font-family: var(--display);
+  background: var(--paper);
+}
+
+.res-wrap {
+  width: min(90%, 1240px);
+  margin-inline: auto;
+}
+
+/* the reading measure — articles never exceed this */
+.art-measure {
+  max-width: 720px;
+}
+
+/* =========================================================
+   TYPE
+========================================================= */
+
+.res h1 {
+  font-size: clamp(1.95rem, 6.2vw, 3.1rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  margin: 18px 0;
+  text-wrap: balance;
+}
+
+.res h2 {
+  font-size: clamp(1.45rem, 4.2vw, 2.15rem);
+  line-height: 1.16;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  margin: 10px 0 0;
+  text-wrap: balance;
+}
+
+.res h3 {
+  font-size: 1.1rem;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 10px;
+}
+
+.res p {
+  line-height: 1.72;
+  color: var(--ink-soft);
+  margin: 0 0 16px;
+}
+
+.res p:last-child {
+  margin-bottom: 0;
+}
+
+.res-kicker {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+/* =========================================================
+   HEADER — dark band
+========================================================= */
+
+.res-head,
+.art-head {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 44px 0 42px;
+  color: #eef4fb;
+
+  background:
+    radial-gradient(700px 420px at 88% 8%, rgba(32, 124, 229, 0.30), transparent 62%),
+    linear-gradient(140deg, var(--navy-900) 0%, var(--navy-800) 48%, var(--navy-600) 100%);
+}
+
+.res-head::before,
+.art-head::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(110% 90% at 85% 12%, #000 10%, transparent 70%);
+  mask-image: radial-gradient(110% 90% at 85% 12%, #000 10%, transparent 70%);
+}
+
+/* perforated tape edge — site-wide motif */
+.res-head::after,
+.art-head::after,
+.res-cta::before {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 1px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.34) 0 10px,
+    transparent 10px 20px
+  );
+}
+
+.res-head h1,
+.art-head h1 {
+  color: #fff;
+}
+
+.res-accent {
+  background: linear-gradient(100deg, #7ee2a8, var(--green-bright) 55%, #4cc9f0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.res-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 15px 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(14px);
+
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #dce9f8;
+}
+
+.res-eyebrow i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green-bright);
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.22);
+}
+
+.res-lede {
+  max-width: 58ch;
+  font-size: 1rem;
+  color: #a8c1de;
+}
+
+/* =========================================================
+   BUTTONS & LINKS
+========================================================= */
+
+.res-btn-solid,
+.res-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 26px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.res-btn-solid {
+  background: linear-gradient(180deg, #2fd06d, #1aa851);
+  color: #04240f;
+  box-shadow: 0 12px 28px rgba(34, 197, 94, 0.3);
+}
+
+.res-btn-solid svg {
+  transition: transform 0.25s ease;
+}
+
+.res-btn-ghost {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.res-btn-mini {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 17px;
+  border-radius: 8px;
+  border: 1px solid var(--line-strong);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.22s ease, border-color 0.22s ease,
+    color 0.22s ease;
+}
+
+.res-btn-mini-wa {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.res-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--green);
+  text-decoration: none;
+}
+
+.res-link-sm {
+  font-size: 0.85rem;
+}
+
+.res-link svg {
+  font-size: 0.75rem;
+  transition: transform 0.22s ease;
+}
+
+@media (hover: hover) {
+  .res-btn-solid:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 36px rgba(34, 197, 94, 0.4);
+  }
+
+  .res-btn-solid:hover svg {
+    transform: translateX(4px);
+  }
+
+  .res-btn-ghost:hover {
+    background: #fff;
+    color: var(--navy-800);
+    border-color: #fff;
+    transform: translateY(-3px);
+  }
+
+  .res-btn-mini:hover {
+    background: var(--navy-800);
+    border-color: var(--navy-800);
+    color: #fff;
+  }
+
+  .res-btn-mini-wa:hover {
+    background: var(--green);
+    border-color: var(--green);
+    color: #fff;
+  }
+
+  .res-link:hover svg {
+    transform: translateX(4px);
+  }
+}
+
+.res a:focus-visible,
+.res button:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.res-head a:focus-visible,
+.art-head a:focus-visible,
+.res-cta a:focus-visible {
+  outline-color: #7ee2a8;
+}
+
+/* =========================================================
+   SECTION SHELL
+========================================================= */
+
+.res-section {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.res-tint {
+  background: var(--paper-tint);
+}
+
+.res-section-head {
+  margin-bottom: 26px;
+}
+
+/* =========================================================
+   TAGS & META
+========================================================= */
+
+.res-tag {
+  display: inline-block;
+  padding: 5px 11px;
+  border-radius: 6px;
+  background: var(--green-pale);
+  color: var(--green);
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.art-tag-dark {
+  background: rgba(34, 197, 94, 0.16);
+  color: #7fd6a1;
+}
+
+.res-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.res-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+.res-readtime {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.res-readtime svg {
+  font-size: 0.85em;
+}
+
+/* =========================================================
+   FEATURED
+========================================================= */
+
+.res-featured {
+  position: relative;
+  padding: 28px 22px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+/* dashed tape edge on the left, echoing the perforation motif */
+.res-featured::before {
+  content: "";
+  position: absolute;
+  inset: 18px auto 18px 0;
+  width: 1px;
+  background: repeating-linear-gradient(
+    180deg,
+    var(--green) 0 6px,
+    transparent 6px 12px
+  );
+}
+
+.res-featured-body h3 {
+  font-size: clamp(1.3rem, 3.4vw, 1.85rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin: 14px 0 12px;
+}
+
+.res-featured-body h3 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.res-featured-body > p {
+  font-size: 1rem;
+  max-width: 62ch;
+  margin-bottom: 18px;
+}
+
+.res-featured .res-meta {
+  margin-bottom: 20px;
+}
+
+/* =========================================================
+   FILTER
+========================================================= */
+
+.res-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding-bottom: 22px;
+  border-bottom: 1px dashed var(--line-strong);
+}
+
+.res-filter button {
+  padding: 9px 15px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: var(--paper);
+  color: var(--ink-soft);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.22s ease, color 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.res-filter button.is-active {
+  background: var(--navy-800);
+  border-color: var(--navy-800);
+  color: #fff;
+}
+
+@media (hover: hover) {
+  .res-filter button:hover:not(.is-active) {
+    border-color: var(--green);
+    color: var(--green);
+  }
+}
+
+.res-empty {
+  padding: 30px 0;
+  font-size: 0.95rem;
+}
+
+/* =========================================================
+   ARTICLE CARDS
+========================================================= */
+
+.res-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.res-card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  transition: transform 0.26s ease, box-shadow 0.26s ease,
+    border-color 0.26s ease;
+}
+
+.res-card h3 {
+  margin: 14px 0 10px;
+}
+
+.res-card h3 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.res-card > p {
+  font-size: 0.92rem;
+  margin-bottom: 20px;
+}
+
+.res-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px dashed var(--line-strong);
+}
+
+@media (hover: hover) {
+  .res-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--line-strong);
+    box-shadow: 0 16px 34px rgba(11, 37, 68, 0.09);
+  }
+}
+
+/* =========================================================
+   ============  ARTICLE DETAIL  ============
+========================================================= */
+
+.art-missing {
+  padding: 70px 0 80px;
+  text-align: center;
+}
+
+.art-missing p {
+  max-width: 46ch;
+  margin: 0 auto 26px;
+}
+
+/* ---- breadcrumb ---- */
+
+.art-crumbs {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper-tint);
+}
+
+.art-crumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.art-crumbs li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.art-crumbs a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.art-crumbs svg {
+  font-size: 7px;
+  color: var(--line-strong);
+}
+
+.art-crumbs li[aria-current] {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ---- article header ---- */
+
+.art-head h1 {
+  margin: 16px 0 18px;
+}
+
+.art-excerpt {
+  font-size: 1.05rem;
+  line-height: 1.66;
+  color: #a8c1de;
+  margin-bottom: 22px;
+}
+
+.art-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 18px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.2);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #8fabcc;
+}
+
+/* ---- body typography — the part that has to be right ---- */
+
+.art-body {
+  padding: 44px 0 52px;
+  border-bottom: 1px solid var(--line);
+}
+
+.art-body p {
+  font-size: 1.03rem;
+  line-height: 1.78;
+  color: #2f4a68;
+  margin: 0 0 22px;
+}
+
+.art-body h2 {
+  font-size: 1.28rem;
+  line-height: 1.28;
+  letter-spacing: -0.015em;
+  margin: 38px 0 14px;
+  padding-top: 22px;
+  border-top: 1px dashed var(--line-strong);
+}
+
+.art-body h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.art-body ul {
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.art-body li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #2f4a68;
+}
+
+.art-body li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.66em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+}
+
+/* pull-aside — dashed border keeps the receipt motif going */
+.art-note {
+  margin: 0 0 26px;
+  padding: 20px 22px;
+  border: 1px dashed var(--line-strong);
+  border-left: 3px solid var(--green);
+  border-radius: 4px 12px 12px 4px;
+  background: var(--paper-tint);
+}
+
+.art-note p {
+  margin: 0;
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: var(--ink);
+}
+
+/* ---- inline CTA at the end of the read ---- */
+
+.art-inline-cta {
+  margin-top: 44px;
+  padding: 26px 22px;
+  background: var(--paper-tint);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+
+.art-inline-cta h3 {
+  margin-bottom: 10px;
+}
+
+.art-inline-cta p {
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.art-inline-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* =========================================================
+   CTA BAND
+========================================================= */
+
+.res-cta {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 50px 0;
+  color: #eef4fb;
+
+  background:
+    radial-gradient(600px 380px at 12% 10%, rgba(34, 197, 94, 0.16), transparent 62%),
+    linear-gradient(140deg, var(--navy-800) 0%, var(--navy-600) 100%);
+}
+
+.res-cta::before {
+  inset: 0 0 auto 0;
+}
+
+.res-cta h2 {
+  color: #fff;
+}
+
+.res-cta p {
+  max-width: 52ch;
+  margin-top: 12px;
+  color: #a8c1de;
+}
+
+.res-cta-actions {
+  display: grid;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+/* =========================================================
+   ≥ 640px
+========================================================= */
+
+@media (min-width: 640px) {
+
+  .res-section {
+    padding: 62px 0;
+  }
+
+  .res-head,
+  .art-head {
+    padding: 58px 0 54px;
+  }
+
+  .res-lede {
+    font-size: 1.07rem;
+  }
+
+  .res-cta-actions {
+    grid-auto-flow: column;
+    justify-content: start;
+  }
+
+  .res-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .res-featured {
+    padding: 34px 30px 34px 34px;
+  }
+
+  .art-body {
+    padding: 54px 0 62px;
+  }
+
+  .art-body p {
+    font-size: 1.06rem;
+  }
+
+  .art-note,
+  .art-inline-cta {
+    padding: 24px 26px;
+  }
+}
+
+/* =========================================================
+   ≥ 900px
+========================================================= */
+
+@media (min-width: 900px) {
+
+  .res-section {
+    padding: 78px 0;
+  }
+
+  .res-head,
+  .art-head {
+    padding: 70px 0 64px;
+  }
+
+  .res-section-head {
+    margin-bottom: 34px;
+  }
+
+  .res-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .res-featured {
+    padding: 42px 40px 42px 44px;
+  }
+
+  .res-cta-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .res-cta-actions {
+    margin-top: 0;
+  }
+
+  .art-body h2 {
+    font-size: 1.38rem;
+    margin-top: 44px;
+  }
+}
+
+/* =========================================================
+   ≥ 1200px
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  .res-section {
+    padding: 88px 0;
+  }
+
+  .res-card {
+    padding: 28px 24px;
+  }
+}
+
+/* =========================================================
+   MOTION PREFERENCES
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .res * {
+    animation: none !important;
+    transition: none !important;
+  }
+}   
