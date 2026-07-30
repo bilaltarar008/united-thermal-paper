@@ -28,7 +28,7 @@ import "./Contact.css";
 ========================================================= */
 
 const CONTACT = {
-  phoneDisplay: "+92 311 7728217",
+  phoneDisplay: "+92 311 7728217", 
   phoneDial: "+92 311 7728217",
   whatsapp: "+92 311 7728217",
   email: "info@unitedthermalpaper.com",
