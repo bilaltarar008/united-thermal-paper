@@ -1,140 +1,220 @@
+import { Link } from "react-router-dom";
 import {
   FaFacebookF,
   FaLinkedinIn,
   FaInstagram,
   FaWhatsapp,
-  FaEnvelope,
   FaPhoneAlt,
+  FaEnvelope,
   FaMapMarkerAlt,
+  FaRegClock,
+  FaArrowUp,
 } from "react-icons/fa";
 
-import { Link } from "react-router-dom";
 import "./Footer.css";
 
+/* =========================================================
+   src/components/layout/Footer/Footer.css + Footer.jsx
+
+   Self-contained: own wrap width, own tokens, ft- prefixed
+   classes. Nothing here depends on a global .container or on
+   styles/variables.css.
+
+   ⚠ Replace the SITE values below. These same details are
+   hardcoded in the navbar, Contact page and home CTA — worth
+   moving to src/data/site.js and importing in all four.
+========================================================= */
+
+const SITE = {
+  phoneDisplay: "+92 XXX XXXXXXX",
+  phoneDial: "+92XXXXXXXXX",
+  whatsapp: "923001234567",
+  email: "info@unitedthermalpaper.com",
+  address: "Lahore, Punjab, Pakistan",
+  hours: "Mon – Sat, 9:00 AM – 6:00 PM",
+  facebook: "#",
+  linkedin: "#",
+  instagram: "#",
+};
+
+const quickLinks = [
+  { label: "Home", to: "/" },
+  { label: "About", to: "/about" },
+  { label: "Products", to: "/products" },
+  { label: "Industries", to: "/industries" },
+  { label: "Resources", to: "/resources" },
+  { label: "Contact", to: "/contact" },
+];
+
+const productLinks = [
+  { label: "POS Rolls", to: "/products#pos-thermal-rolls" },
+  { label: "ATM Rolls", to: "/products#atm-thermal-rolls" },
+  { label: "Card Machine", to: "/products#credit-card-machine-rolls" },
+  { label: "Kiosk Rolls", to: "/products#kiosk-rolls" },
+  { label: "Scale Rolls", to: "/products#weighing-scale-rolls" },
+  { label: "Custom Rolls", to: "/products#custom-thermal-rolls" },
+  { label: "Jumbo & Bulk", to: "/products#jumbo-rolls-bulk-supply" },
+];
+
 function Footer() {
+  const year = new Date().getFullYear();
+
+  const toTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
   return (
-    <footer className="footer">
+    <footer className="ft">
 
-      <div className="container footer-grid">
+      <div className="ft-inner">
 
-        {/* Company */}
+        {/* ===================================================
+              MAIN GRID
+        =================================================== */}
 
-        <div className="footer-column">
+        <div className="ft-grid">
 
-          <h2>United Thermal Paper</h2>
+          {/* ---------- brand ---------- */}
 
-          <p className="brand">
-            A Brand of Tenacious Global Group
-          </p>
+          <div className="ft-col ft-col--brand">
 
-          <p>
-            Premium thermal paper solutions for retail,
-            banking, healthcare, restaurants,
-            logistics and industrial businesses.
-          </p>
+            <h2 className="ft-name">United Thermal Paper</h2>
 
-          <div className="socials">
+            <span className="ft-parent">A Brand of Tenacious Global Group</span>
 
-            <a href="#"><FaFacebookF /></a>
+            <p className="ft-blurb">
+              Thermal rolls for retail, banking, healthcare, restaurants and
+              logistics — slit and inspected in-house, held in stock, delivered
+              on time.
+            </p>
 
-            <a href="#"><FaLinkedinIn /></a>
+            <ul className="ft-social">
+              <li>
+                <a
+                  href={SITE.facebook}
+                  aria-label="Facebook"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaFacebookF aria-hidden="true" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href={SITE.linkedin}
+                  aria-label="LinkedIn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaLinkedinIn aria-hidden="true" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href={SITE.instagram}
+                  aria-label="Instagram"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaInstagram aria-hidden="true" />
+                </a>
+              </li>
+            </ul>
 
-            <a href="#"><FaInstagram /></a>
+          </div>
+
+          {/* ---------- quick links ---------- */}
+
+          <nav className="ft-col" aria-labelledby="ft-quick">
+            <h3 className="ft-head" id="ft-quick">
+              Quick links
+            </h3>
+            <ul className="ft-links ft-links--split">
+              {quickLinks.map((l) => (
+                <li key={l.label}>
+                  <Link to={l.to}>{l.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* ---------- products ---------- */}
+
+          <nav className="ft-col" aria-labelledby="ft-prod">
+            <h3 className="ft-head" id="ft-prod">
+              Products
+            </h3>
+            <ul className="ft-links ft-links--split">
+              {productLinks.map((l) => (
+                <li key={l.label}>
+                  <Link to={l.to}>{l.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* ---------- contact ---------- */}
+
+          <div className="ft-col ft-col--contact">
+
+            <h3 className="ft-head">Get in touch</h3>
+
+            <ul className="ft-contact">
+
+              <li>
+                <FaMapMarkerAlt aria-hidden="true" />
+                <span>{SITE.address}</span>
+              </li>
+
+              <li>
+                <FaPhoneAlt aria-hidden="true" />
+                <a href={`tel:${SITE.phoneDial}`}>{SITE.phoneDisplay}</a>
+              </li>
+
+              <li>
+                <FaEnvelope aria-hidden="true" />
+                <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+              </li>
+
+              <li>
+                <FaRegClock aria-hidden="true" />
+                <span>{SITE.hours}</span>
+              </li>
+
+            </ul>
+
+            <a
+              href={`https://wa.me/${SITE.whatsapp}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ft-wa"
+            >
+              <FaWhatsapp aria-hidden="true" />
+              WhatsApp us
+            </a>
 
           </div>
 
         </div>
 
-        {/* Quick Links */}
+        {/* ===================================================
+              BOTTOM BAR
+        =================================================== */}
 
-        <div className="footer-column">
+        <div className="ft-bottom">
 
-          <h3>Quick Links</h3>
+          <p>© {year} United Thermal Paper. All rights reserved.</p>
 
-          <Link to="/">Home</Link>
+          <div className="ft-bottom-right">
+            <span className="ft-parent-inline">
+              A brand of Tenacious Global Group
+            </span>
 
-          <Link to="/about">About</Link>
-
-          <Link to="/products">Products</Link>
-
-          <Link to="/industries">Industries</Link>
-
-          <Link to="/resources">Resources</Link>
-
-          <Link to="/contact">Contact</Link>
-
-        </div>
-
-        {/* Products */}
-
-        <div className="footer-column">
-
-          <h3>Products</h3>
-
-          <Link to="/products">POS Rolls</Link>
-
-          <Link to="/products">ATM Rolls</Link>
-
-          <Link to="/products">Credit Card Rolls</Link>
-
-          <Link to="/products">Kiosk Rolls</Link>
-
-          <Link to="/products">Custom Rolls</Link>
-
-          <Link to="/products">Jumbo Rolls</Link>
+            <button type="button" className="ft-top" onClick={toTop}>
+              Back to top
+              <FaArrowUp aria-hidden="true" />
+            </button>
+          </div>
 
         </div>
-
-        {/* Contact */}
-
-        <div className="footer-column">
-
-          <h3>Contact Us</h3>
-
-          <p>
-
-            <FaMapMarkerAlt />
-
-            Lahore, Pakistan
-
-          </p>
-
-          <p>
-
-            <FaPhoneAlt />
-
-            +92 XXX XXXXXXX
-
-          </p>
-
-          <p>
-
-            <FaEnvelope />
-
-            info@unitedthermalpaper.com
-
-          </p>
-
-          <a
-            href="https://wa.me/923001234567"
-            className="whatsapp"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaWhatsapp />
-
-            WhatsApp Us
-
-          </a>
-
-        </div>
-
-      </div>
-
-      <div className="footer-bottom">
-
-        © {new Date().getFullYear()} United Thermal Paper.
-        All Rights Reserved.
 
       </div>
 
