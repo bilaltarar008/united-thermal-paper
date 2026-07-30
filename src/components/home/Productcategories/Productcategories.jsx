@@ -4,7 +4,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { products } from "../../../data/products";
 import "./Productcategories.css";
 
-/* src/components/home/ProductCategories/ProductCategories.jsx
+/* src/components/home/Productcategories/Productcategories.jsx
    Shows the first six categories. Add a seventh to data/products.js
    and it appears on /products but not here — deliberate, so the
    homepage stays scannable. */
@@ -13,7 +13,7 @@ const hideIfBroken = (e) => {
   e.currentTarget.style.opacity = 0;
 };
 
-function ProductCategories() {
+function Productcategories() {
   const featured = products.slice(0, 6);
 
   return (
@@ -93,4 +93,4 @@ function ProductCategories() {
   );
 }
 
-export default ProductCategories;
+export default Productcategories;

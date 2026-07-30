@@ -9,7 +9,7 @@ import {
 
 import "./Whychooseus.css";
 
-/* src/components/home/WhyChooseUs/WhyChooseUs.jsx
+/* src/components/home/Whychooseus/Whychooseus.jsx
    The six points the client asked for, written as specifics rather
    than adjectives — a buyer can't verify "premium quality" but can
    verify "checked against a reference sample per batch". */
@@ -47,7 +47,7 @@ const reasons = [
   },
 ];
 
-function WhyChooseUs() {
+function Whychooseus() {
   return (
     <section
       className="u-section u-section--tint wcu"
@@ -92,4 +92,4 @@ function WhyChooseUs() {
   );
 }
 
-export default WhyChooseUs;
+export default Whychooseus;

@@ -3,7 +3,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 import "./Aboutbrand.css";
 
-/* src/components/home/AboutBrand/AboutBrand.jsx
+/* src/components/home/Aboutbrand/Aboutbrand.jsx
    The client's "About Our Brand" block, and the place the
    Tenacious Global Group lockup belongs on the homepage.
 
@@ -17,7 +17,7 @@ const facts = [
   { value: "24–48 h", label: "Bulk dispatch" },
 ];
 
-function AboutBrand() {
+function Aboutbrand() {
   return (
     <section className="u-section ab" aria-labelledby="ab-title">
 
@@ -85,4 +85,4 @@ function AboutBrand() {
   );
 }
 
-export default AboutBrand;
+export default Aboutbrand;
