@@ -28,9 +28,9 @@ import "./Contact.css";
 ========================================================= */
 
 const CONTACT = {
-  phoneDisplay: "+92 XXX XXXXXXX",
-  phoneDial: "+92XXXXXXXXX",
-  whatsapp: "923001234567",
+  phoneDisplay: "+92 311 7728217",
+  phoneDial: "+92 311 7728217",
+  whatsapp: "+92 311 7728217",
   email: "info@unitedthermalpaper.com",
   address: "Lahore, Punjab, Pakistan",
   hours: "Monday – Saturday, 9:00 AM – 6:00 PM",
