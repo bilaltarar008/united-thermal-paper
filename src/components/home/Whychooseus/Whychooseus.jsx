@@ -7,7 +7,7 @@ import {
   FaHeadset,
 } from "react-icons/fa";
 
-import "./WhyChooseUs.css";
+import "./Whychooseus.css";
 
 /* src/components/home/WhyChooseUs/WhyChooseUs.jsx
    The six points the client asked for, written as specifics rather

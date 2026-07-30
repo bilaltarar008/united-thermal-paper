@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 
-import "./AboutBrand.css";
+import "./Aboutbrand.css";
 
 /* src/components/home/AboutBrand/AboutBrand.jsx
    The client's "About Our Brand" block, and the place the

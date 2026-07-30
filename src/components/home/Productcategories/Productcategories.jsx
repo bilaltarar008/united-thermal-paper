@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 
 import { products } from "../../../data/products";
-import "./ProductCategories.css";
+import "./Productcategories.css";
 
 /* src/components/home/ProductCategories/ProductCategories.jsx
    Shows the first six categories. Add a seventh to data/products.js
