@@ -348,7 +348,8 @@
   backdrop-filter: blur(16px);
   box-shadow: 0 20px 44px rgba(0, 0, 0, 0.35);
 
-  font-family: var(--mono);
+  /* font-family: var(--mono); */
+  font-family: var(--display);
   font-size: 12px;
   line-height: 1.7;
   letter-spacing: 0.04em;

@@ -1,0 +1,328 @@
+/* =========================================================
+   UTILITIES — United Thermal Paper
+   src/styles/utilities.css
+
+   Shared primitives used by the home page sections, so each
+   section's stylesheet only has to describe its own layout.
+   Prefix is u- to make it obvious these are shared.
+========================================================= */
+
+/* ---------------------------------------------------------
+   LAYOUT
+--------------------------------------------------------- */
+
+.u-wrap {
+  width: min(90%, var(--wrap));
+  margin-inline: auto;
+}
+
+.u-section {
+  padding-block: var(--sec-y);
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--display);
+}
+
+.u-section--tint {
+  background: var(--paper-tint);
+}
+
+/* dark band, with the engineering grid and perforated edge */
+.u-section--dark {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-bottom: 0;
+  color: var(--on-dark);
+
+  background:
+    radial-gradient(700px 420px at 88% 8%, rgba(32, 124, 229, 0.28), transparent 62%),
+    linear-gradient(140deg, var(--navy-900) 0%, var(--navy-800) 48%, var(--navy-600) 100%);
+}
+
+.u-section--dark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(110% 90% at 85% 12%, #000 10%, transparent 70%);
+  mask-image: radial-gradient(110% 90% at 85% 12%, #000 10%, transparent 70%);
+}
+
+/* the receipt-perforation edge that ties the whole site together */
+.u-section--dark::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 1px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.34) 0 10px,
+    transparent 10px 20px
+  );
+}
+
+/* ---------------------------------------------------------
+   SECTION HEADINGS
+--------------------------------------------------------- */
+
+.u-head {
+  margin-bottom: 28px;
+}
+
+.u-kicker {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+.u-title {
+  font-size: clamp(1.5rem, 4.4vw, 2.3rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.u-section--dark .u-title {
+  color: #fff;
+}
+
+.u-note {
+  max-width: 62ch;
+  margin: 14px 0 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+.u-section--dark .u-note {
+  color: var(--on-dark-soft);
+}
+
+.u-accent {
+  background: linear-gradient(100deg, var(--green-glow), var(--green-bright) 55%, var(--blue-bright));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* heading with a trailing link on the same row */
+.u-head--row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* ---------------------------------------------------------
+   BUTTONS & LINKS
+--------------------------------------------------------- */
+
+.u-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 26px;
+  border: 1px solid transparent;
+  border-radius: var(--r-md);
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.u-btn--solid {
+  background: linear-gradient(180deg, #2fd06d, #1aa851);
+  color: #04240f;
+  box-shadow: var(--shadow-green);
+}
+
+.u-btn--outline {
+  background: var(--paper);
+  border-color: var(--line-strong);
+  color: var(--ink);
+}
+
+.u-btn--ghost {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.24);
+  color: #fff;
+}
+
+.u-btn--wa {
+  background: var(--wa);
+  color: #fff;
+}
+
+.u-btn--mini {
+  padding: 11px 17px;
+  border-radius: var(--r-sm);
+  border-color: var(--line-strong);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 0.85rem;
+}
+
+.u-btn svg {
+  transition: transform 0.25s ease;
+}
+
+.u-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--green);
+  text-decoration: none;
+}
+
+.u-link svg {
+  font-size: 0.75rem;
+  transition: transform 0.22s ease;
+}
+
+@media (hover: hover) {
+  .u-btn--solid:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 36px rgba(34, 197, 94, 0.4);
+  }
+
+  .u-btn--outline:hover,
+  .u-btn--mini:hover {
+    background: var(--navy-800);
+    border-color: var(--navy-800);
+    color: #fff;
+  }
+
+  .u-btn--ghost:hover {
+    background: #fff;
+    border-color: #fff;
+    color: var(--navy-800);
+    transform: translateY(-3px);
+  }
+
+  .u-btn--wa:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 36px rgba(37, 211, 102, 0.36);
+  }
+
+  .u-btn:hover svg,
+  .u-link:hover svg {
+    transform: translateX(4px);
+  }
+}
+
+.u-btn:focus-visible,
+.u-link:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+
+.u-section--dark .u-btn:focus-visible,
+.u-section--dark .u-link:focus-visible {
+  outline-color: var(--green-glow);
+}
+
+/* button row that stacks on small screens */
+.u-actions {
+  display: grid;
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .u-actions {
+    grid-auto-flow: column;
+    justify-content: start;
+  }
+}
+
+/* ---------------------------------------------------------
+   CARDS & CHIPS
+--------------------------------------------------------- */
+
+.u-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  transition: transform 0.26s ease, box-shadow 0.26s ease,
+    border-color 0.26s ease;
+}
+
+@media (hover: hover) {
+  .u-card--lift:hover {
+    transform: translateY(-4px);
+    border-color: var(--line-strong);
+    box-shadow: var(--shadow-card);
+  }
+}
+
+.u-chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+}
+
+.u-chip {
+  padding: 5px 10px;
+  border-radius: 6px;
+  background: var(--green-pale);
+  color: var(--green);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+/* small monospace label, used for meta rows and eyebrows */
+.u-label {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* dashed rule — the tape motif in list form */
+.u-dashed-top {
+  border-top: 1px dashed var(--line-strong);
+}
+
+.u-dashed-bottom {
+  border-bottom: 1px dashed var(--line-strong);
+}
+
+/* ---------------------------------------------------------
+   MOTION PREFERENCES
+--------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .u-btn,
+  .u-link,
+  .u-card {
+    transition: none !important;
+  }
+}

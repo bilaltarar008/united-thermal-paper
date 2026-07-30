@@ -203,7 +203,7 @@ function About() {
             {/* Group lockup */}
             <div className="about-group">
 
-              {/*
+{/*               
                 Drop the Tenacious Global Group logo in and swap this block:
                 <img src={tggLogo} alt="Tenacious Global Group" />
               */}

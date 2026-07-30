@@ -1,23 +1,78 @@
-:root{
+/* =========================================================
+   DESIGN TOKENS — United Thermal Paper
+   src/styles/variables.css
 
---primary:#0057B8;
+   Import order in main.jsx matters:
+     reset.css → variables.css → typography.css → utilities.css → global.css
 
---secondary:#0B63CE;
+   Page-scoped copies of these tokens (in About.css, Products.css,
+   etc.) will shadow these and keep working. Over time, delete the
+   scoped blocks and let pages inherit from here.
+========================================================= */
 
---accent:#00B67A;
+:root {
+  /* ---- brand navy ---- */
+  --navy-900: #061b34;
+  --navy-800: #08284d;
+  --navy-700: #0a3160;
+  --navy-600: #0d3f74;
 
---dark:#0F172A;
+  /* ---- ink (text on light) ---- */
+  --ink: #0b2544;
+  --ink-soft: #4c6b8c;
+  --ink-faint: #7d97b4;
 
---gray:#64748B;
+  /* ---- text on dark ---- */
+  --on-dark: #eef4fb;
+  --on-dark-soft: #a8c1de;
+  --on-dark-faint: #8fabcc;
 
---light:#F8FAFC;
+  /* ---- surfaces ---- */
+  --paper: #ffffff;
+  --paper-tint: #f3f7fc;
+  --line: #dce6f1;
+  --line-strong: #c3d4e6;
 
---white:#ffffff;
+  /* ---- accent ---- */
+  --green: #1aa851;
+  --green-bright: #22c55e;
+  --green-pale: #eafaf0;
+  --green-glow: #7ee2a8;
+  --blue-bright: #4cc9f0;
+  --wa: #25d366;
 
---border:#E2E8F0;
+  /* ---- type ---- */
+  --display: "Manrope", "Poppins", system-ui, -apple-system, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
 
---shadow:0 15px 40px rgba(0,0,0,.08);
+  /* ---- radii ---- */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 20px;
+  --r-pill: 999px;
 
---radius:14px;
+  /* ---- shadows ---- */
+  --shadow-card: 0 16px 34px rgba(11, 37, 68, 0.09);
+  --shadow-lift: 0 20px 42px rgba(11, 37, 68, 0.12);
+  --shadow-green: 0 12px 28px rgba(34, 197, 94, 0.3);
 
+  /* ---- section rhythm ---- */
+  --sec-y: 52px;
+  --wrap: 1240px;
+
+  /* ---- navbar clearance for anchor jumps ---- */
+  --nav-clear: 100px;
+}
+
+@media (min-width: 640px) {
+  :root { --sec-y: 66px; }
+}
+
+@media (min-width: 900px) {
+  :root { --sec-y: 84px; }
+}
+
+@media (min-width: 1200px) {
+  :root { --sec-y: 96px; }
 }

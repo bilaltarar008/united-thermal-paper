@@ -1,0 +1,121 @@
+/* src/components/home/AboutBrand/AboutBrand.css */
+
+.ab-grid {
+  display: grid;
+  gap: 32px;
+  align-items: start;
+}
+
+.ab-copy p {
+  margin: 18px 0 0;
+  font-size: 1rem;
+  line-height: 1.74;
+  color: var(--ink-soft);
+  max-width: 60ch;
+}
+
+/* ---- group lockup ---- */
+
+.ab-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 28px;
+  padding: 12px 18px 12px 14px;
+  border-radius: var(--r-md);
+  background: var(--paper-tint);
+  border: 1px solid var(--line);
+}
+
+.ab-group-mark {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 9px;
+  background: var(--navy-800);
+  color: #fff;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.ab-group img {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+}
+
+.ab-group-text {
+  font-family: var(--display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.ab-group-text b {
+  display: block;
+  margin-bottom: 3px;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+.ab-more {
+  margin-top: 24px;
+}
+
+/* ---- fact panel ---- */
+
+.ab-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin: 0;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+
+.ab-facts > div {
+  padding: 20px 18px;
+  background: var(--paper);
+}
+
+.ab-facts dt {
+  font-family: var(--display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.ab-facts dd {
+  margin: 6px 0 0;
+}
+
+@media (min-width: 900px) {
+  .ab-grid {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+    gap: 60px;
+  }
+
+  .ab-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ab-facts > div {
+    padding: 26px 22px;
+  }
+
+  .ab-facts dt {
+    font-size: 1.6rem;
+  }
+}

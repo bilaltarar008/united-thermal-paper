@@ -1,0 +1,92 @@
+/* src/components/home/ProductCategories/ProductCategories.css */
+
+.pc-all {
+  flex: none;
+  padding-bottom: 4px;
+}
+
+.pc-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.pc-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.pc-media {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: repeating-linear-gradient(
+    135deg,
+    #eaf1f9 0 10px,
+    #e2ebf5 10px 20px
+  );
+}
+
+.pc-media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.pc-body {
+  padding: 18px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.pc-body h3 {
+  font-size: 1.02rem;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.pc-body h3 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.pc-tagline {
+  display: block;
+  margin-bottom: 14px;
+  letter-spacing: 0.09em;
+  line-height: 1.5;
+}
+
+.pc-chips {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px dashed var(--line-strong);
+}
+
+@media (hover: hover) {
+  .pc-card:hover .pc-media img {
+    transform: scale(1.05);
+  }
+
+  .pc-body h3 a:hover {
+    color: var(--green);
+  }
+}
+
+@media (min-width: 560px) {
+  .pc-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  .pc-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
