@@ -33,7 +33,7 @@ function Hero() {
 
           <span className="hero-tag">
             <i />
-            Premium Thermal Paper Manufacturer
+            Premium Thermal Paper Roll Manufacturer & Importer
           </span>
 
           <h1>

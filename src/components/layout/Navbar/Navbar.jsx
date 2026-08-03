@@ -71,7 +71,8 @@ function Navbar() {
 
             <span>
               <FaPhoneAlt />
-              +92 311 7728217
+               +92 371 9222993
+
             </span>
 
             <span>
@@ -81,14 +82,15 @@ function Navbar() {
 
             <span>
               <FaClock />
-              Mon - Sat | 9:00 AM - 6:00 PM
+              Mon - Sat | 9:00 AM - 9:00 PM
             </span>
 
             {/* Duplicate for infinite scrolling */}
 
             <span>
               <FaPhoneAlt />
-              +92 311 7728217
+               +92 371 9222993
+
             </span>
 
             <span>

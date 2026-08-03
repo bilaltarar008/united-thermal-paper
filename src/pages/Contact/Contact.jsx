@@ -28,12 +28,12 @@ import "./Contact.css";
 ========================================================= */
 
 const CONTACT = {
-  phoneDisplay: "+92 311 7728217", 
-  phoneDial: "+92 311 7728217",
-  whatsapp: "+92 311 7728217",
+  phoneDisplay: "+92 371 9222993", 
+  phoneDial: "+92 371 9222993",
+  whatsapp: "+92 371 9222993",
   email: "info@unitedthermalpaper.com",
-  address: "Lahore, Punjab, Pakistan",
-  hours: "Monday – Saturday, 9:00 AM – 6:00 PM",
+  address: "Main Pine Avenue Road, Lahore, Punjab, Pakistan",
+  hours: "Monday – Saturday, 9:00 AM – 9:00 PM",
 };
 
 /* kept local so this page has no external dependency —
