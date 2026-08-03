@@ -33,6 +33,7 @@ const CONTACT = {
   whatsapp: "+92 371 9222993",
   email: "info@unitedthermalpaper.com",
   address: "Main Pine Avenue Road, Lahore, Punjab, Pakistan",
+  Mainoffice: "Head Office: Karachi, Pakistan",
   hours: "Monday – Saturday, 9:00 AM – 9:00 PM",
 };
 
@@ -517,6 +518,14 @@ function Contact() {
                   Location
                 </span>
                 <p>{CONTACT.address}</p>
+              </div>
+
+              <div>
+                <span className="con-detail-label">
+                  <FaMapMarkerAlt aria-hidden="true" />
+                  Location
+                </span>
+                <p>{CONTACT.Mainoffice}</p>
               </div>
 
               <div>
