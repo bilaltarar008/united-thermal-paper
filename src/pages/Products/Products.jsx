@@ -20,7 +20,7 @@ import "./Products.css";
    so every category's full specification lives here.
 ========================================================= */
 
-const WHATSAPP_NUMBER = "923001234567"; // ← change once, applies everywhere
+const WHATSAPP_NUMBER = "+92 371 9222993"; // ← change once, applies everywhere
 
 const reveal = {
   hidden: { opacity: 0, y: 20 },

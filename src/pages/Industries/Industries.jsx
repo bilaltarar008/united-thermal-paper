@@ -23,7 +23,7 @@ import "./Industries.css";
    ROUTE: /industries
 ========================================================= */
 
-const WHATSAPP_NUMBER = "923001234567"; // ← change once, applies everywhere
+const WHATSAPP_NUMBER = "+92 371 9222993"; // ← change once, applies everywhere
 
 /* icon keys live in the data file; the components live here,
    so the data stays portable */

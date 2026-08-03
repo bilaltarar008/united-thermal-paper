@@ -21,7 +21,7 @@
 //    The param must be named "slug" to match useParams() below.
 // ========================================================= */
 
-// const WHATSAPP_NUMBER = "923001234567"; // ← change once, applies everywhere
+// const WHATSAPP_NUMBER = "+92 371 9222993"; // ← change once, applies everywhere
 
 // const reveal = {
 //   hidden: { opacity: 0, y: 20 },

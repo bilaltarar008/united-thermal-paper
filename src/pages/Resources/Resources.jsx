@@ -16,7 +16,7 @@ import "./Resources.css";
    ROUTE: /resources
 ========================================================= */
 
-const WHATSAPP_NUMBER = "923001234567";
+const WHATSAPP_NUMBER = "+92 371 9222993";
 
 const reveal = {
   hidden: { opacity: 0, y: 20 },

@@ -562,7 +562,7 @@ function About() {
             </Link>
 
             <a
-              href="https://wa.me/923001234567"
+              href="https://wa.me/+92 371 9222993"
               target="_blank"
               rel="noopener noreferrer"
               className="about-btn-wa"

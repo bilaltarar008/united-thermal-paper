@@ -32,9 +32,9 @@ const SITE = {
   email: "info@unitedthermalpaper.com",
   address: "Main Pine Avenue Road, Lahore, Punjab, Pakistan",
   hours: "Mon – Sat, 9:00 AM – 9:00 PM",
-  facebook: "#",
+  facebook: "https://www.facebook.com/share/16Bij1UjF1j/",
   linkedin: "#",
-  instagram: "#",
+  instagram: "https://www.instagram.com/unitedthermal?igsh=aGNoNXo5ajhjbmFm",
 };
 
 const quickLinks = [
