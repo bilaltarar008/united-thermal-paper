@@ -59,11 +59,12 @@ function Whychooseus() {
         <div className="u-head">
           <span className="u-kicker">Why choose us</span>
           <h2 className="u-title" id="wcu-title">
-            What you actually get
+            Why Choose United Thermal Paper ⭐
+ 
           </h2>
           <p className="u-note">
-            We slit and inspect in-house rather than reselling finished rolls.
-            Everything below follows from that.
+            We import premium grade thermal paper from China and manufacture high-quality thermal paper rollsunder strict quality control, ensuring reliable performance and consistent quality for businesses
+              across Pakistan.
           </p>
         </div>
 
