@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 
 import "./Aboutbrand.css";
-import aboutImage from "../Articles/thermalpaper.png";
+import aboutImage from "../Articles/ourbrand.png";
 
 /* =========================================================
    src/components/home/Aboutbrand/Aboutbrand.jsx
