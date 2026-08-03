@@ -5,7 +5,8 @@ import {
   FaWhatsapp,
   FaRegCheckCircle,
 } from "react-icons/fa";
-// import tggLogo from "../Articles/ourbrand.png";
+
+import tggLogo from "../Industries/ourbrand.png";
 
 
 import "./About.css";
@@ -204,8 +205,7 @@ function About() {
             {/* Group lockup */}
             <div className="about-group">
 
-             {/* <img src={tggLogo} alt="Tenacious Global Group" /> */}
-              <span className="about-group-mark" aria-hidden="true">TGG</span>
+             <img src={tggLogo} alt="Tenacious Global Group" />
 
               <span className="about-group-text">
                 <b>A Brand of</b>
