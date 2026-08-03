@@ -30,10 +30,10 @@ import aboutImage from "../Articles/ourbrand.png";
 ========================================================= */
 
 const facts = [
-  { value: "2015", label: "Supplying since" },
-  { value: "10", label: "Industries served" },
-  { value: "37–210 mm", label: "Roll widths" },
-  { value: "24–48 h", label: "Bulk dispatch" },
+  { value: "Serving Businesses Across Pakistan", label: "Industries served" },
+  { value: "2020", label: "Supplying since" },
+  { value: "57 & 80 mm", label: "Roll widths" },
+  { value: "Other Sizes Available on Request" },
 ];
 
 function Aboutbrand() {
@@ -99,23 +99,16 @@ function Aboutbrand() {
           </motion.span>
 
           <motion.h2 className="ab-title" id="ab-title" variants={item}>
-            A converter,
-            <span className="ab-accent"> not a middleman.</span>
+            Trusted Thermal Paper
+            <span className="ab-accent"> Manufacturer & Importer</span>
           </motion.h2>
 
           <motion.p variants={item}>
-            United Thermal Paper buys jumbo thermal reels, inspects them, and
-            slits them to size in-house. That one fact explains most of what
-            customers notice about us: we know which mill a roll came from, we
-            hold a coating grade steady across reorders, and we can cut a width
-            that isn&apos;t on anyone&apos;s standard list.
+            United Thermal Paper is a trusted manufacturer and importer of premium-grade thermal paper rolls in Pakistan. We import high-quality thermal paper from leading international suppliers and convert it into precision-finished rolls using modern machinery and strict quality control. 
           </motion.p>
 
           <motion.p variants={item}>
-            Our customers are businesses where a bad roll costs more than the
-            roll — a supermarket lane stops, an ATM stops issuing receipts, a
-            pharmacy can&apos;t hand over a dispensing label. We built the
-            operation around not being the reason that happens.
+            Our products are designed to deliver sharp, long-lasting prints and reliable performance for POS systems, ATMs, billing machines, and other thermal printers. We are committed to providing consistent quality, competitive pricing, fast nationwide delivery, and dependable customer service. Whether you need standard sizes or custom specifications, United Thermal Paper is your reliable partner for premium thermal paper solutions.
           </motion.p>
 
           {/* fact strip — reads like printed receipt copy */}

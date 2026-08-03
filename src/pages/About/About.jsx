@@ -5,6 +5,7 @@ import {
   FaWhatsapp,
   FaRegCheckCircle,
 } from "react-icons/fa";
+// import tggLogo from "../Articles/ourbrand.png";
 
 
 import "./About.css";
@@ -16,27 +17,27 @@ import "./About.css";
 --------------------------------------------------------- */
 
 const facts = [
-  { value: "2015", label: "Supplying since" },
-  { value: "9", label: "Industries served" },
-  { value: "57–210 mm", label: "Roll widths" },
-  { value: "24–48 h", label: "Bulk dispatch" },
+  { value: "Serving Businesses Across Pakistan", label: "Industries served" },
+  { value: "2020", label: "Supplying since" },
+  { value: "57 & 80 mm", label: "Roll widths" },
+  { value: "Other Sizes Available on Request" },
 ];
 
 const story = [
   {
-    year: "2015",
+    year: "2020",
     title: "Started as a converter",
     body:
       "We began slitting and packing rolls for retailers in Lahore who kept getting stock that jammed or printed grey.",
   },
   {
-    year: "2018",
+    year: "2023",
     title: "Direct jumbo sourcing",
     body:
       "We moved to buying jumbo reels straight from established mills, so we control the coating grade instead of inheriting it.",
   },
   {
-    year: "2021",
+    year: "2025",
     title: "Joined Tenacious Global Group",
     body:
       "Group backing gave us the import volume and warehousing to hold buffer stock, which is what keeps lead times short.",
@@ -203,10 +204,7 @@ function About() {
             {/* Group lockup */}
             <div className="about-group">
 
-{/*               
-                Drop the Tenacious Global Group logo in and swap this block:
-                <img src={tggLogo} alt="Tenacious Global Group" />
-              */}
+             {/* <img src={tggLogo} alt="Tenacious Global Group" /> */}
               <span className="about-group-mark" aria-hidden="true">TGG</span>
 
               <span className="about-group-text">

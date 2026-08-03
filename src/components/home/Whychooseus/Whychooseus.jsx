@@ -18,17 +18,17 @@ const reasons = [
   {
     icon: FaAward,
     title: "Consistent quality",
-    body: "Every batch traces back to a named jumbo source and coating grade, so roll fifty behaves like roll one.",
+    body: "Manufactured under strict quality control to ensure consistent quality and reliable performance in every roll.",
   },
   {
     icon: FaPrint,
     title: "Clear, reliable printing",
-    body: "Image density is checked against a reference sample before a batch ships. No grey, half-readable receipts.",
+    body: "Delivers sharp, dark, and long-lasting prints with smooth paper feeding and reliable performance.",
   },
   {
     icon: FaRulerCombined,
     title: "Multiple sizes and specs",
-    body: "Widths from 37 to 210 mm, cores from 12 to 40 mm, and paper from 48 to 80 gsm — held in stock, not on order.",
+    body: "Available in standard 57 mm and 80 mm thermal paper rolls with various length options (e.g. 10 m, 12 m, 14 m, 40 m, 60 m, 80 m and more). Other sizes and specifications are available on request.",
   },
   {
     icon: FaSlidersH,
@@ -38,12 +38,12 @@ const reasons = [
   {
     icon: FaTruck,
     title: "Reliable supply",
-    body: "Buffer stock held on fast-moving sizes, so a reorder ships in 24 to 48 hours instead of waiting on an import cycle.",
-  },
+    body: "We maintain ready stock of standard thermal paper rolls to ensure fast dispatch and consistent availability across Pakistan.",
+  },  
   {
     icon: FaHeadset,
-    title: "People who answer",
-    body: "The same contact from first enquiry to repeat order. Send a photo of your roll and you'll get a straight answer.",
+    title: "Dedicated Customer Support",
+    body: "Our team is always ready to assist you with product inquiries, quotations, and order support.",
   },
 ];
 
