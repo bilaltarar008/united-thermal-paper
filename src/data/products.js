@@ -1,8 +1,8 @@
 /* =========================================================
    PRODUCT CATALOGUE — United Thermal Paper
+   src/data/products.js
    ---------------------------------------------------------
    THIS IS THE ONLY FILE YOU EDIT TO CHANGE PRODUCT CONTENT.
-   Both /products and /products/:slug read from here.
 
    ⚠ EVERY SPEC BELOW IS A PLACEHOLDER. Replace with the real
    ranges you actually stock. Do not publish the compatibility
@@ -10,11 +10,47 @@
    confirmed them — procurement buyers in banking and pharma
    will ask for documentation.
 
-   Images: drop files in  public/images/products/
-   e.g. public/images/products/pos-rolls.jpg
-   Missing files degrade to a styled placeholder, so the page
-   never breaks while you're waiting on photography.
+   ---------------------------------------------------------
+   IMAGES — WHY THERE IS NO import STATEMENT HERE
+   ---------------------------------------------------------
+   Files in public/ are served straight to the browser and never
+   pass through Vite's module system, so they cannot be imported.
+   `import x from './public/...'` will always fail. Instead the
+   path is written as a URL string, and IMG below is the single
+   place that path is defined.
+
+   PUT YOUR FILES HERE, with exactly these names:
+
+     public/images/products/pos-rolls.jpg
+     public/images/products/atm-rolls.jpg
+     public/images/products/card-machine-rolls.jpg
+     public/images/products/kiosk-rolls.jpg
+     public/images/products/scale-rolls.jpg
+     public/images/products/custom-rolls.jpg
+     public/images/products/jumbo-rolls.jpg
+
+   Create the folders if they don't exist. `public` sits at the
+   project root, beside `src` — not inside it.
+
+   A missing file shows a styled placeholder rather than breaking
+   the build, which is why this approach suits a site whose
+   photography is still being produced.
+
+   ---------------------------------------------------------
+   IF YOU WANT BUNDLED IMAGES INSTEAD
+   ---------------------------------------------------------
+   Move the files to src/assets/images/products/ and import each
+   one individually at the top of this file:
+
+     import posRolls from "../assets/images/products/pos-rolls.jpg";
+     ...then use  image: posRolls,
+
+   You gain build-time optimisation and cache-busting hashes, but
+   every referenced file MUST exist or the build fails outright.
+   Only switch once all the photography has landed.
 ========================================================= */
+
+const IMG = "/images/products";
 
 export const products = [
   {
@@ -23,12 +59,8 @@ export const products = [
     tagline: "Retail counters and restaurant terminals",
     blurb:
       "The everyday receipt roll. Built for tills that run from open to close without a jam or a grey print.",
-    image: "/images/products/pos-rolls.jpg",
-    gallery: [
-      "/images/products/pos-rolls.jpg",
-      "/images/products/pos-rolls-2.jpg",
-      "/images/products/pos-rolls-3.jpg",
-    ],
+    image: `${IMG}/pos-rolls.jpg`,
+    gallery: [`${IMG}/pos-rolls.jpg`],
     highlights: ["57 & 80 mm", "48–70 gsm", "BPA-free option"],
     specs: {
       "Roll widths": "57 mm, 76 mm, 80 mm",
@@ -71,11 +103,8 @@ export const products = [
     tagline: "Cash machines and self-service banking",
     blurb:
       "Longer rolls and tighter tolerances, because refilling an ATM is a scheduled visit and not a two-minute job.",
-    image: "/images/products/atm-rolls.jpg",
-    gallery: [
-      "/images/products/atm-rolls.jpg",
-      "/images/products/atm-rolls-2.jpg",
-    ],
+    image: `${IMG}/atm-rolls.jpg`,
+    gallery: [`${IMG}/atm-rolls.jpg`],
     highlights: ["80 mm standard", "Long-run rolls", "Low-dust slitting"],
     specs: {
       "Roll widths": "80 mm (57 mm on request)",
@@ -116,8 +145,8 @@ export const products = [
     tagline: "Card terminals and mobile POS",
     blurb:
       "Small-diameter rolls for handheld and countertop card machines, wound to feed cleanly in compact print heads.",
-    image: "/images/products/card-machine-rolls.jpg",
-    gallery: ["/images/products/card-machine-rolls.jpg"],
+    image: `${IMG}/card-machine-rolls.jpg`,
+    gallery: [`${IMG}/card-machine-rolls.jpg`],
     highlights: ["57 mm", "Compact diameter", "High-clarity print"],
     specs: {
       "Roll widths": "57 mm, 58 mm",
@@ -158,11 +187,8 @@ export const products = [
     tagline: "Ticketing, queueing and self-service",
     blurb:
       "Heavier stock for unattended machines, where a torn or curled receipt means a service call rather than a reprint.",
-    image: "/images/products/kiosk-rolls.jpg",
-    gallery: [
-      "/images/products/kiosk-rolls.jpg",
-      "/images/products/kiosk-rolls-2.jpg",
-    ],
+    image: `${IMG}/kiosk-rolls.jpg`,
+    gallery: [`${IMG}/kiosk-rolls.jpg`],
     highlights: ["Up to 112 mm", "70–80 gsm", "Long-run rolls"],
     specs: {
       "Roll widths": "80 mm, 82.5 mm, 112 mm",
@@ -204,8 +230,8 @@ export const products = [
     tagline: "Fresh counters and packing floors",
     blurb:
       "Label and receipt stock for weighing systems, cut to the widths that scale printers actually use.",
-    image: "/images/products/scale-rolls.jpg",
-    gallery: ["/images/products/scale-rolls.jpg"],
+    image: `${IMG}/scale-rolls.jpg`,
+    gallery: [`${IMG}/scale-rolls.jpg`],
     highlights: ["37–60 mm", "Label or plain", "Adhesive options"],
     specs: {
       "Roll widths": "37 mm, 40 mm, 50 mm, 57 mm, 60 mm",
@@ -246,11 +272,8 @@ export const products = [
     tagline: "Your width, your core, your branding",
     blurb:
       "When the printer doesn't take a standard size, or you want your logo and terms printed on the reverse.",
-    image: "/images/products/custom-rolls.jpg",
-    gallery: [
-      "/images/products/custom-rolls.jpg",
-      "/images/products/custom-rolls-2.jpg",
-    ],
+    image: `${IMG}/custom-rolls.jpg`,
+    gallery: [`${IMG}/custom-rolls.jpg`],
     highlights: ["Any width", "Back printing", "Own branding"],
     specs: {
       "Roll widths": "37 mm – 210 mm, cut to order",
@@ -262,7 +285,12 @@ export const products = [
       "Back printing": "Up to 2 colours",
     },
     sizes: [
-      { width: "Any 37–210 mm", core: "12–40 mm", length: "On request", diameter: "On request" },
+      {
+        width: "Any 37–210 mm",
+        core: "12–40 mm",
+        length: "On request",
+        diameter: "On request",
+      },
     ],
     packing: [
       "Packing configuration to your requirement",
@@ -287,12 +315,9 @@ export const products = [
     tagline: "For converters and high-volume buyers",
     blurb:
       "Full jumbo reels and pallet-scale supply for businesses that slit their own stock or consume by the tonne.",
-    image: "/images/products/jumbo-rolls.jpg",
-    gallery: [
-      "/images/products/jumbo-rolls.jpg",
-      "/images/products/jumbo-rolls-2.jpg",
-    ],
-    highlights: ["Jumbo reels", "Pallet supply", "Contract pricing"],
+    image: `${IMG}/jumbo-rolls.jpg`,
+    gallery: [`${IMG}/jumbo-rolls.jpg`],
+    highlights: ["Jumbo reels", "Pallet supply", "Contract supply"],
     specs: {
       "Reel width": "Up to 1000 mm",
       "Paper weight": "48 – 80 gsm",
@@ -303,7 +328,12 @@ export const products = [
       "Supply basis": "Per reel, per pallet, or contract volume",
     },
     sizes: [
-      { width: "Up to 1000 mm", core: "76 mm", length: "On request", diameter: "Up to 1000 mm" },
+      {
+        width: "Up to 1000 mm",
+        core: "76 mm",
+        length: "On request",
+        diameter: "Up to 1000 mm",
+      },
     ],
     packing: [
       "Reels wrapped and edge-protected",
@@ -325,8 +355,7 @@ export const products = [
 
 /* ---- helpers ---- */
 
-export const getProduct = (slug) =>
-  products.find((p) => p.slug === slug);
+export const getProduct = (slug) => products.find((p) => p.slug === slug);
 
 export const getRelated = (slug, count = 3) =>
   products.filter((p) => p.slug !== slug).slice(0, count);
