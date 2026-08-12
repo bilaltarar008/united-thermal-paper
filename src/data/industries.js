@@ -52,7 +52,6 @@ export const industries = [
     priority: "One spec across every branch, held in buffer stock",
     rolls: [
       { label: "POS Thermal Rolls", anchor: "pos-thermal-rolls" },
-      { label: "Weighing Scale Rolls", anchor: "weighing-scale-rolls" },
     ],
     typical: "80 mm + 37–57 mm labels",
   },
@@ -80,7 +79,6 @@ export const industries = [
     priority: "Legibility that holds, and BPA-free handling for staff",
     rolls: [
       { label: "POS Thermal Rolls", anchor: "pos-thermal-rolls" },
-      { label: "Custom Thermal Rolls", anchor: "custom-thermal-rolls" },
     ],
     typical: "57 & 80 mm, BPA-free",
   },
@@ -108,7 +106,6 @@ export const industries = [
     priority: "Rolls that survive vehicles, dust and temperature swings",
     rolls: [
       { label: "Credit Card Rolls", anchor: "credit-card-machine-rolls" },
-      { label: "Weighing Scale Rolls", anchor: "weighing-scale-rolls" },
     ],
     typical: "57–80 mm",
   },
@@ -136,7 +133,6 @@ export const industries = [
     priority: "High-volume supply with buffer stock on fast-moving sizes",
     rolls: [
       { label: "Jumbo Rolls & Bulk Supply", anchor: "jumbo-rolls-bulk-supply" },
-      { label: "Custom Thermal Rolls", anchor: "custom-thermal-rolls" },
     ],
     typical: "80 mm + custom",
   },
@@ -150,7 +146,6 @@ export const industries = [
     priority: "Heavier stock that won't curl or tear in unattended machines",
     rolls: [
       { label: "Kiosk Rolls", anchor: "kiosk-rolls" },
-      { label: "Custom Thermal Rolls", anchor: "custom-thermal-rolls" },
     ],
     typical: "80–112 mm, 70–80 gsm",
   },

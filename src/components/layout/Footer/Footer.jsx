@@ -52,8 +52,6 @@ const productLinks = [
   { label: "ATM Rolls", to: "/products#atm-thermal-rolls" },
   { label: "Card Machine", to: "/products#credit-card-machine-rolls" },
   { label: "Kiosk Rolls", to: "/products#kiosk-rolls" },
-  { label: "Scale Rolls", to: "/products#weighing-scale-rolls" },
-  { label: "Custom Rolls", to: "/products#custom-thermal-rolls" },
   { label: "Jumbo & Bulk", to: "/products#jumbo-rolls-bulk-supply" },
 ];
 

@@ -44,8 +44,6 @@ const PRODUCT_OPTIONS = [
   { value: "atm-thermal-rolls", label: "ATM Thermal Rolls" },
   { value: "credit-card-machine-rolls", label: "Credit Card Machine Rolls" },
   { value: "kiosk-rolls", label: "Kiosk Rolls" },
-  { value: "weighing-scale-rolls", label: "Weighing Scale Rolls" },
-  { value: "custom-thermal-rolls", label: "Custom Thermal Rolls" },
   { value: "jumbo-rolls-bulk-supply", label: "Jumbo Rolls & Bulk Supply" },
 ];
 
