@@ -351,6 +351,117 @@ export const products = [
       "Sample reels available before contract",
     ],
   },
+
+    {
+    slug: "barcode-label-rolls",
+    name: "Barcode Label Rolls",
+    tagline: "High-quality labels for barcode and product printing",
+    blurb:
+      "High-quality barcode label rolls designed for sharp, clear printing, strong adhesion and reliable performance across label printing applications.",
+    image: `${IMG}/Barcode-label-rolls.jpeg`,
+    gallery: [`${IMG}/Barcode-label-rolls.jpeg`],
+
+    highlights: [
+      "Multiple sizes",
+      "Strong adhesion",
+      "Smooth finish",
+      "Sharp & clear prints",
+    ],
+
+    specs: {
+      // Add confirmed specifications here
+      "Label type": "Barcode labels",
+      "Labels per roll": "100 labels per roll",
+      "Sizes": "Multiple sizes available",
+      "Finish": "Smooth finish",
+      "Adhesion": "Strong adhesion",
+      "Compatibility": "Compatible with major barcode & label printers",
+    },
+
+    sizes: [
+      // Add actual sizes here
+      {
+        width: "To be confirmed",
+        height: "To be confirmed",
+        labelsPerRoll: "100",
+      },
+    ],
+
+    packing: [
+      "Neatly wound rolls",
+      "Bulk supply available",
+      "Packaging according to order requirements",
+    ],
+
+    applications: [
+      "Barcode labeling",
+      "Product labeling",
+      "Retail labeling",
+      "Warehouse labeling",
+      "Inventory management",
+      "Shipping and logistics",
+    ],
+
+    compatibility: [
+      "Compatible with major barcode and label printers",
+      // Add confirmed printer brands/models here
+    ],
+  },
+
+  {
+    slug: "barcode-ribbon-rolls",
+    name: "Barcode Ribbon Rolls",
+    tagline: "High-performance ribbons for sharp and durable printing",
+    blurb:
+      "High-performance barcode ribbon rolls designed for sharp, clear and durable prints with reliable performance for high-volume label printing.",
+    image: `${IMG}/barcode-ribbon-rolls.jpeg`,
+    gallery: [`${IMG}/barcode-ribbon-rolls.jpeg`],
+
+    highlights: [
+      "Smooth & clear printing",
+      "Strong & durable",
+      "Wide compatibility",
+      "Long-lasting quality",
+    ],
+
+    specs: {
+      // Add confirmed specifications here
+      "Ribbon type": "Barcode printing ribbon",
+      "Sizes": "Multiple sizes available",
+      "Print quality": "Sharp and clear",
+      "Performance": "Long-lasting",
+      "Compatibility": "Compatible with major barcode & label printers",
+    },
+
+    sizes: [
+      // Add actual ribbon sizes here
+      {
+        width: "To be confirmed",
+        length: "To be confirmed",
+        core: "To be confirmed",
+      },
+    ],
+
+    packing: [
+      "Individually packed rolls",
+      "Bulk supply available",
+      "Packaging according to order requirements",
+    ],
+
+    applications: [
+      "Barcode label printing",
+      "Product labeling",
+      "Retail labeling",
+      "Warehouse labeling",
+      "Shipping and logistics",
+      "High-volume printing",
+    ],
+
+    compatibility: [
+      "Compatible with major barcode and label printers",
+      // Add confirmed printer brands/models here
+    ],
+  },
 ];
 
 /* ---- helpers ---- */
